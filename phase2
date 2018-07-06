@@ -13,3 +13,5 @@ dist:runwhen		boot,cron-15m
 dist:runon		ALLHOSTS
 findpkgs:runwhen	boot,cron-15m
 findpkgs:runon		ALLHOSTS
+aptitude:runwhen	boot,cron-15m
+aptitude:runon		lab1
