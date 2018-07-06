@@ -1,0 +1,4 @@
+gitrepo 		git@github.com:ImperialCollegeLondon/csg-mini-maint.git
+lsbid	  		Ubuntu
+lsbrelease		16.04
+cachedir		/tmp/minimaint.cache

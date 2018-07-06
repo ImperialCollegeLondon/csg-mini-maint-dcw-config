@@ -1,0 +1,15 @@
+lockdir			/tmp/minimaint.lock
+rundir			/tmp/minimaint.run
+hostclass:source	file:hostclass
+hostclass:file		/tmp/hostclass
+safefile:triggers	safe_file_triggers.json
+dist:root		/tmp/minimaint.root
+packagelists		pkglists
+hello:runwhen		boot,cron-60m
+hello:runon		ALLHOSTS
+goodbye:runwhen		cron-15m
+goodbye:runon		CLIENT
+dist:runwhen		boot,cron-15m
+dist:runon		ALLHOSTS
+findpkgs:runwhen	boot,cron-15m
+findpkgs:runon		ALLHOSTS
