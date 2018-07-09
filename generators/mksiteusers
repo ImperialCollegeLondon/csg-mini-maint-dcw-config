@@ -22,6 +22,7 @@ sub siteusers ($$)
 	my $outfh;
 	die "Can't create $outfile\n" unless open( $outfh, '>', $outfile );
 
+	print $outfh "username,uid,gid,gecos,home,shell,rhomedirserver,rhomepath,disabled\n";
 	foreach my $u (@$users)
 	{
 		my( $uname, $uid, $gid, $gecos, $home, $shell,
@@ -36,7 +37,7 @@ sub siteusers ($$)
 
 my $dbh = dbconnect();
 
-siteusers( $dbh, "../site-users.csv" );
+siteusers( $dbh, "../site-users" );
 
 $dbh->disconnect();
 

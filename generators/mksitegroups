@@ -44,6 +44,7 @@ sub sitegroups ($$)
 	my $outfh;
 	die "Can't create $outfile\n" unless open( $outfh, '>', $outfile );
 
+	print $outfh "groupname,gid,members\n";
 	foreach my $g (@$groups)
 	{
 		my( $groupname, $gid ) = @$g;
@@ -58,7 +59,7 @@ sub sitegroups ($$)
 
 my $dbh = dbconnect();
 
-sitegroups( $dbh, "../site-groups.csv" );
+sitegroups( $dbh, "../site-groups" );
 
 $dbh->disconnect();
 
