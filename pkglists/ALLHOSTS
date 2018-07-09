@@ -16,6 +16,7 @@ libunix-syslog-perl
 openssh-client
 openssh-server
 rsync
+screen
 tcsh
 tmux
 xfsprogs
