@@ -42,7 +42,9 @@ The core principles must be:
   and pushed, making it live.
 
   For now, this config dir contains a hostclass file containing some made up
-  example config info.
+  example config info, and now users/site-users.csv and users/site-groups.csv
+  files contain all the real DoC users and groups (these are created by the
+  generators/mksiteusers and mksitegroups utilities from our database).
 
 The basic idea will be to COPY small bits of maint and it's libraries in
 here, separate out the config from the source code, delete as much as
@@ -60,7 +62,7 @@ INITIAL GOALS:
 2). maint aptitude - ported maint_compose and did initial 016findpkgs to
 		     produce the list of desired pkgs, Thurs 5th July.
 
-3). maint useraccounts
+3). maint useraccounts - working on this now.
 
 	duncan white
-	June 2018
+	June-July 2018

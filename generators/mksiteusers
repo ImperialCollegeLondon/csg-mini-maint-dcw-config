@@ -1,0 +1,43 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Dbconnect;
+
+#
+# siteusers( $dbh, $outfile );
+#	Produce $outfile, the site-users CSV file, for all users in
+#	the CSG admin database users table.
+#
+sub siteusers ($$)
+{
+	my( $dbh, $outfile ) = @_;
+
+	my $users = $dbh->selectall_arrayref('select username,uid,gid,gecos,homedirlocal,shell,homedirremoteserver,homedirremotepath,disabled from v_user_accounts order by username');
+	my $n = @$users;
+
+	print "found $n users\n";
+
+	my $outfh;
+	die "Can't create $outfile\n" unless open( $outfh, '>', $outfile );
+
+	foreach my $u (@$users)
+	{
+		my( $uname, $uid, $gid, $gecos, $home, $shell,
+		    $rhomedirserver, $rhomepath, $disabled ) = @$u;
+		$rhomedirserver //= '';
+		$rhomepath //= '';
+		$gecos //= '';
+		print $outfh "$uname,$uid,$gid,$gecos,$home,$shell,$rhomedirserver,$rhomepath,$disabled\n";
+	}
+	close( $outfh );
+}
+
+my $dbh = dbconnect();
+
+siteusers( $dbh, "../site-users.csv" );
+
+$dbh->disconnect();
+
+exit 0;
