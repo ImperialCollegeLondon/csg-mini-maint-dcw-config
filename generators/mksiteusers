@@ -5,6 +5,15 @@ use warnings;
 
 use Dbconnect;
 
+
+# we'll add this offset to all uids from the database to avoid clashes later
+# and to disable non-kerberised NFS:-)
+our $uidoffset = 2000;
+
+# we'll add this offset to all gids from the database to avoid clashes later
+# and to disable non-kerberised NFS:-)
+our $gidoffset = 2000;
+
 #
 # siteusers( $dbh, $outfile );
 #	Produce $outfile, the site-users CSV file, for all users in
@@ -30,6 +39,8 @@ sub siteusers ($$)
 	{
 		my( $uname, $uid, $gid, $gecos, $home, $shell,
 		    $rhomedirserver, $rhomepath, $disabled ) = @$u;
+		$uid += $uidoffset;
+		$gid += $gidoffset;
 		if( $seenid{$uid} )
 		{
 			warn "duplicate user id $uid (username $uname, prev useranme $seenid{$uid} - skipping\n";

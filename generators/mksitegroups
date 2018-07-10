@@ -6,6 +6,11 @@ use warnings;
 use Dbconnect;
 
 
+# we'll add this offset to all gids from the database to avoid clashes later
+# and to disable non-kerberised NFS:-)
+our $gidoffset = 2000;
+
+
 sub get_membership ($)
 {
     my( $dbh ) = @_;
@@ -51,6 +56,8 @@ sub sitegroups ($$)
 	foreach my $g (@$groups)
 	{
 		my( $groupname, $gid ) = @$g;
+		$gid += $gidoffset;
+
 		if( $seenid{$gid} )
 		{
 			warn "duplicate group id $gid (name $groupname, prev name $seenid{$gid} - skipping\n";
