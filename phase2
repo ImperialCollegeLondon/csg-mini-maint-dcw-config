@@ -21,8 +21,8 @@ users:users		file:users/site-users
 users:groups		file:users/site-groups
 users:overrideshellclass	OVERRIDESHELL
 users:overrideshelldir	users/overrideshell
-users:passwdfilename	/tmp/passwd
-users:groupfilename	/tmp/group
+#users:passwdfilename	/tmp/passwd
+#users:groupfilename	/tmp/group
 users:autohomesfilename	/tmp/auto.homes
 # maint scripts.. when to run, on where, plus any per-maint script config
 hello:runwhen		boot,cron-60m
