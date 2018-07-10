@@ -13,8 +13,8 @@ users:maxgroups		16
 # offsets (default: 0) to avoid clashing uids
 users:uidoffset		2000
 users:gidoffset		2000
-users:sysuidmax		999
-users:sysgidmax		999
+users:sysuidmax		1999
+users:sysgidmax		1999
 users:requiredgroups	users/required-groups.txt
 users:requiredrootusers	users/required-root-users.txt
 users:users		file:users/site-users
