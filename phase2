@@ -3,14 +3,20 @@ rundir			/var/run/minimaint
 hostclass:source	file:hostclass
 hostclass:file		/var/lib/maint/hostclass
 safefile:triggers	safe_file_triggers.json
+
 # maint dist: where to distribute to, can be a temp dir for debugging
 dist:root		/
+
+# maint aptitude: where are the pkglists?
 packagelists		pkglists
+
+# DNS domain
 domain			doc.ic.ac.uk
+
 # user accounts information
 users:maxgroups		16
 # when generating uids and gids from site-users and groups, add these
-# offsets (default: 0) to avoid clashing uids
+# offsets (default: 0) to avoid clashing uids and gids
 users:uidoffset		2000
 users:gidoffset		2000
 users:sysuidmax		1999
@@ -24,7 +30,8 @@ users:overrideshelldir	users/overrideshell
 #users:passwdfilename	/tmp/passwd
 #users:groupfilename	/tmp/group
 #users:autohomesfilename	/tmp/auto.homes
-# maint scripts.. when to run, on where, plus any per-maint script config
+
+# maint scripts.. when to run, on where
 hello:runwhen		boot,cron-60m
 hello:runon		ALLHOSTS
 goodbye:runwhen		cron-15m
