@@ -52,7 +52,7 @@ sub siteusers ($$)
 
 my $dbh = dbconnect();
 
-siteusers( $dbh, "../site-users" );
+siteusers( $dbh, "../users/site-users" );
 
 $dbh->disconnect();
 

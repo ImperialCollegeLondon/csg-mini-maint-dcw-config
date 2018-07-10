@@ -74,7 +74,7 @@ sub sitegroups ($$)
 
 my $dbh = dbconnect();
 
-sitegroups( $dbh, "../site-groups" );
+sitegroups( $dbh, "../users/site-groups" );
 
 $dbh->disconnect();
 

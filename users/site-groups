@@ -1,3 +1,4 @@
+groupname,gid,members
 csg,100,cate,dcw3,ldk2,pjm
 interftp,101,
 tapes,102,
@@ -324,7 +325,7 @@ conic9,1159,
 lsds,1160,akolious,alw,costa,cristic,dm1515,dmuthuku,fkelbert,foj15,ip108,jgfc,lm111,rc3011,wjw15
 automed-data,1161,pjm
 smartest,1162,at1908,gzy,pkassano
-crypto,1163,aj1212,ap4314,az2416,jd,jdl11,jep114,js9116,kwolter,ma12917,nls17,shschmid,ss11715,sv212,tjt216,wjk,yx3217
+crypto,1163,aj1212,ap4314,az2416,dm4416,jd,jdl11,jep114,js9116,kwolter,ma12917,nls17,shschmid,ss11715,sv212,tjt216,wjk,yx3217
 courman,1200,dfg,psc
 cc,1201,cn06,fpr02,marko,mjw03,oskar,phjk,wl-demo
 km-trec,1213,
