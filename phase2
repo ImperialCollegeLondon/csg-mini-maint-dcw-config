@@ -1,7 +1,7 @@
-lockdir			/tmp/minimaint.lock
-rundir			/tmp/minimaint.run
+lockdir			/var/lock/minimaint
+rundir			/var/run/minimaint
 hostclass:source	file:hostclass
-hostclass:file		/tmp/hostclass
+hostclass:file		/var/lib/maint/hostclass
 safefile:triggers	safe_file_triggers.json
 # maint dist: where to distribute to, can be a temp dir for debugging
 dist:root		/
@@ -23,7 +23,7 @@ users:overrideshellclass	OVERRIDESHELL
 users:overrideshelldir	users/overrideshell
 #users:passwdfilename	/tmp/passwd
 #users:groupfilename	/tmp/group
-users:autohomesfilename	/tmp/auto.homes
+#users:autohomesfilename	/tmp/auto.homes
 # maint scripts.. when to run, on where, plus any per-maint script config
 hello:runwhen		boot,cron-60m
 hello:runon		ALLHOSTS
@@ -33,5 +33,5 @@ dist:runwhen		boot,cron-15m
 dist:runon		ALLHOSTS
 aptitude:runwhen	boot,cron-15m
 aptitude:runon		ALLHOSTS
-useraccounts:runwhen		boot,cron-15m
-useraccounts:runon		ALLHOSTS
+useraccounts:runwhen	boot,cron-15m
+useraccounts:runon	ALLHOSTS
