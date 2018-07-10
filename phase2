@@ -9,12 +9,12 @@ packagelists		pkglists
 domain			doc.ic.ac.uk
 # user accounts information
 users:maxgroups		16
-users:sysuidmax		99
-users:sysgidmax		99
 # when generating uids and gids from site-users and groups, add these
 # offsets (default: 0) to avoid clashing uids
 users:uidoffset		2000
 users:gidoffset		2000
+users:sysuidmax		999
+users:sysgidmax		999
 users:requiredgroups	users/required-groups.txt
 users:requiredrootusers	users/required-root-users.txt
 users:users		file:users/site-users
