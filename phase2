@@ -3,14 +3,24 @@ rundir			/tmp/minimaint.run
 hostclass:source	file:hostclass
 hostclass:file		/tmp/hostclass
 safefile:triggers	safe_file_triggers.json
+# maint dist: where to distribute to, can be a temp dir for debugging
 dist:root		/
 packagelists		pkglists
+domain			doc.ic.ac.uk
+# user accounts information
+users:maxgroups		16
 users:sysuidmax		99
 users:sysgidmax		99
 users:requiredgroups	users/required-groups.txt
 users:requiredrootusers	users/required-root-users.txt
 users:users		file:users/site-users
 users:groups		file:users/site-groups
+users:overrideshellclass	OVERRIDESHELL
+users:overrideshelldir	users/overrideshell
+users:passwdfilename	/tmp/passwd
+users:groupfilename	/tmp/group
+users:autohomesfilename	/tmp/auto.homes
+# maint scripts.. when to run, on where, plus any per-maint script config
 hello:runwhen		boot,cron-60m
 hello:runon		ALLHOSTS
 goodbye:runwhen		cron-15m
@@ -19,3 +29,5 @@ dist:runwhen		boot,cron-15m
 dist:runon		ALLHOSTS
 aptitude:runwhen	boot,cron-15m
 aptitude:runon		ALLHOSTS
+useraccounts:runwhen		boot,cron-15m
+useraccounts:runon		ALLHOSTS

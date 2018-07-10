@@ -22,11 +22,26 @@ sub siteusers ($$)
 	my $outfh;
 	die "Can't create $outfile\n" unless open( $outfh, '>', $outfile );
 
+	my %seenid;
+	my %seenname;
+
 	print $outfh "username,uid,gid,gecos,home,shell,rhomedirserver,rhomepath,disabled\n";
 	foreach my $u (@$users)
 	{
 		my( $uname, $uid, $gid, $gecos, $home, $shell,
 		    $rhomedirserver, $rhomepath, $disabled ) = @$u;
+		if( $seenid{$uid} )
+		{
+			warn "duplicate user id $uid (username $uname, prev useranme $seenid{$uid} - skipping\n";
+			next;
+		}
+		$seenid{$uid} = $uname;
+		if( $seenname{$uid} )
+		{
+			warn "duplicate user name $uname (uid $uid, prev uid $seenname{$uname} - skipping\n";
+			next;
+		}
+		$seenname{$uname} = $uid;
 		$rhomedirserver //= '';
 		$rhomepath //= '';
 		$gecos //= '';

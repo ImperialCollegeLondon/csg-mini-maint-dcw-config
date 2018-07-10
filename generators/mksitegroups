@@ -35,7 +35,7 @@ sub sitegroups ($$)
 
 	my $groups = $dbh->selectall_arrayref(
 		'select groupname,gid from v_grouplist order by gid' );
-	my $members = get_membership( $dbh );
+	my $gmembers = get_membership( $dbh );
 
 	my $n = @$groups;
 
@@ -44,12 +44,27 @@ sub sitegroups ($$)
 	my $outfh;
 	die "Can't create $outfile\n" unless open( $outfh, '>', $outfile );
 
+	my %seenid;
+	my %seenname;
+
 	print $outfh "groupname,gid,members\n";
 	foreach my $g (@$groups)
 	{
 		my( $groupname, $gid ) = @$g;
+		if( $seenid{$gid} )
+		{
+			warn "duplicate group id $gid (name $groupname, prev name $seenid{$gid} - skipping\n";
+			next;
+		}
+		$seenid{$gid} = $groupname;
+		if( $seenname{$gid} )
+		{
+			warn "duplicate group name $groupname (gid $gid, prev gid $seenname{$groupname} - skipping\n";
+			next;
+		}
+		$seenname{$groupname} = $gid;
 		my @members;
-		my $aref = $members->{$groupname};
+		my $aref = $gmembers->{$groupname};
 		@members = @$aref if $aref;
 		my $members = join(',', @members);
 		print $outfh "$groupname,$gid,$members\n";
