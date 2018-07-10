@@ -45,7 +45,7 @@ sub siteusers ($$)
 		$rhomedirserver //= '';
 		$rhomepath //= '';
 		$gecos //= '';
-		print $outfh "$uname,$uid,$gid,$gecos,$home,$shell,$rhomedirserver,$rhomepath,$disabled\n";
+		print $outfh "$uname:$uid:$gid:$gecos:$home:$shell:$rhomedirserver:$rhomepath:$disabled\n";
 	}
 	close( $outfh );
 }
