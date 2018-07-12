@@ -148,8 +148,6 @@ ibus-hangul
 idea
 indent
 inkscape
-intel-composer-c++
-intel-fortran
 ipe
 ipython
 irssi
@@ -230,8 +228,8 @@ libevent-dev
 libfftw3-dev
 libfreeimage-dev
 libgd-gd2-noxpm-perl_
-libgd-gd2-perl
 libgd-graph-perl
+libgd-perl
 libghc-glut-dev
 libghc-network-dev
 libghc-opengl-dev
@@ -317,7 +315,6 @@ mgp
 mingw-w64
 monotone
 monotone-viz
-motif-clients
 mpich
 mpich-doc
 multitail
@@ -351,7 +348,6 @@ parrot
 pavucontrol
 pdf2svg
 pdfgrep
-pdfjam
 pdftk
 perl-tk
 personal-tomcat8
@@ -467,6 +463,7 @@ tcl-vtk
 tcptraceroute
 terminator
 texlive-bibtex-extra
+texlive-extra-utils
 texlive-fonts-extra
 texlive-fonts-extra-doc
 texlive-formats-extra
