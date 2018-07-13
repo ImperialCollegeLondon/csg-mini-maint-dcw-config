@@ -27,7 +27,7 @@ libevent-dev
 libfltk1.3-dev
 libgd-dev
 libgoogle-perftools-dev
-libgsl0-dev
+libgsl-dev
 libldap2-dev
 liblua5.1-0-dev
 libnetcdf-dev
