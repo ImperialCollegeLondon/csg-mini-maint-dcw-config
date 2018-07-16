@@ -13,7 +13,7 @@ sub site_aptitude_check ($%)
         # If we are both in class THEATRE and it's currently during standard
         # hours, skip so that we don't disturb any teaching in progress.
         my $hour = (localtime(time()))[2];
-        if( $inclass{THEATRE
+        if( $inclass{THEATRE}
         &&  $hour >= 9
         &&  $hour <= 18
         && $mode ne "install")
