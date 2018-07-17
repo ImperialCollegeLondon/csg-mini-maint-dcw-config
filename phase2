@@ -15,8 +15,8 @@ aptitude:sitecheck		site/aptcheck
 # user accounts information
 users:users			file:users/site-users
 users:groups			file:users/site-groups
-users:requiredgroups		users/required-groups.txt
-users:requiredrootusers		users/required-root-users.txt
+users:requiredgroups		users/required-groups
+users:requiredrootusers		users/required-root-users
 #users:passwdfilename		/tmp/passwd
 #users:groupfilename		/tmp/group
 #users:autohomesfilename	/tmp/auto.homes
@@ -41,3 +41,5 @@ aptitude:runwhen	boot,install,cron-15m
 aptitude:runon		ALLHOSTS
 useraccounts:runwhen	boot,install,cron-15m
 useraccounts:runon	ALLHOSTS
+locales:runwhen		boot,install,cron-15m
+locales:runon		ALLHOSTS
