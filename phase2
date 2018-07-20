@@ -23,10 +23,10 @@ users:requiredrootusers		users/required-root-users
 users:maxgroups			16
 # when generating uids and gids from site-users and groups, add these
 # offsets (default: 0) to avoid clashing uids and gids
-users:uidoffset			1900
-users:gidoffset			1900
-users:sysuidmax			1100
-users:sysgidmax			1100
+#users:uidoffset			1900
+#users:gidoffset			1900
+#users:sysuidmax			1100
+#users:sysgidmax			1100
 users:overrideshellclass	OVERRIDESHELL
 users:overrideshelldir		users/overrideshell
 
