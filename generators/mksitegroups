@@ -8,7 +8,7 @@ use Dbconnect;
 
 # we'll add this offset to all gids from the database to avoid clashes later
 # and to disable non-kerberised NFS:-)
-our $gidoffset = 2000;
+our $gidoffset = 0;	# was 2000
 
 
 sub get_membership ($)
