@@ -51,7 +51,7 @@ my $dbh = dbconnect();
 
 my %siteuser = read_siteusers( $dbh );
 
-producefile( $dbh, "../kerberos/users-root", \%siteuser );
+producefile( $dbh, "../kerberos/users_root", \%siteuser );
 
 $dbh->disconnect();
 
