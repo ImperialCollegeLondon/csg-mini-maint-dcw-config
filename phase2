@@ -30,7 +30,13 @@ users:maxgroups			16
 users:overrideshellclass	OVERRIDESHELL
 users:overrideshelldir		users/overrideshell
 
-autovol:source			auto.vol
+autovol:source			file:auto.vol
+
+kerberos:realm			DOC.IC.AC.UK
+kerberos:users_root		file:kerberos/users_root
+kerberos:stopclasses		file:kerberos/stopclasses
+kerberos:ktd_server		kerberos.doc.ic.ac.uk
+kerberos:ktd_port		760
 
 # maint scripts.. when to run, on where
 hello:runwhen		cron-60m
@@ -51,3 +57,5 @@ useraccounts:runwhen	boot,install,cron-15m
 useraccounts:runon	DOCHOSTS
 autovol:runwhen		boot,install,cron-15m
 autovol:runon		DOCHOSTS
+kerberos:runwhen	boot,install,cron-15m
+kerberos:runon		DOCHOSTS
