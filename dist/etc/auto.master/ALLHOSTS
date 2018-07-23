@@ -22,4 +22,4 @@
 # precedence.
 #
 /homes	/etc/auto.homes	--timeout 9 intr
-#DCW later/vol	/etc/auto.vol	--timeout 9 intr
+/vol	/etc/auto.vol	--timeout 9 intr
