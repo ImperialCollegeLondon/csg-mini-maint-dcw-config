@@ -42,6 +42,7 @@ sub producefile ($$$)
 	foreach my $u (@$users)
 	{
 		my( $class, $username ) = @$u;
+		$class = "DOCHOSTS" if $class eq "HOSTDOC";
 		print $outfh "$class,$username\n" if $siteusers->{$username};
 	}
 	close( $outfh );

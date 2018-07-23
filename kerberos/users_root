@@ -404,13 +404,13 @@ honeyeater,rw1008
 hood,mjb04
 horatio,rv914
 hornbeam,jpassera
-HOSTDOC,cbosio
-HOSTDOC,dcw
-HOSTDOC,gcorrall
-HOSTDOC,gmazza
-HOSTDOC,gnb
-HOSTDOC,ldk
-HOSTDOC,tjoseph1
+DOCHOSTS,cbosio
+DOCHOSTS,dcw
+DOCHOSTS,gcorrall
+DOCHOSTS,gmazza
+DOCHOSTS,gnb
+DOCHOSTS,ldk
+DOCHOSTS,tjoseph1
 hotcrp,deyers
 hotcrp,dokeeffe
 hotcrp,prp
@@ -926,3 +926,4 @@ zeus,klc
 zhaxi,dharz
 zosimus,mjb04
 zuli,jgao
+LAB,mjw03
