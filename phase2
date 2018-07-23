@@ -30,6 +30,8 @@ users:maxgroups			16
 users:overrideshellclass	OVERRIDESHELL
 users:overrideshelldir		users/overrideshell
 
+autovol:source			auto.vol
+
 # maint scripts.. when to run, on where
 hello:runwhen		cron-60m
 hello:runon		ALLHOSTS
@@ -39,9 +41,13 @@ dist:runwhen		boot,install,cron-15m
 dist:runon		ALLHOSTS
 aptitude:runwhen	boot,install,cron-15m
 aptitude:runon		ALLHOSTS
-useraccounts:runwhen	boot,install,cron-15m
-useraccounts:runon	DOCHOSTS
 locales:runwhen		boot,install,cron-15m
 locales:runon		ALLHOSTS
 alternatives:runwhen	install,cron-60m
 alternatives:runon	ALLHOSTS
+
+# ones to run only on DOCHOSTS
+useraccounts:runwhen	boot,install,cron-15m
+useraccounts:runon	DOCHOSTS
+autovol:runwhen		boot,install,cron-15m
+autovol:runon		DOCHOSTS
