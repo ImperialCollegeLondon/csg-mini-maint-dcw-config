@@ -39,6 +39,7 @@ kerberos:ktd_server		kerberos.doc.ic.ac.uk
 kerberos:ktd_port		760
 
 # maint scripts.. when to run, on where
+# ones to run everywhere, ie. on ALLHOSTS
 hello:runwhen		cron-60m
 hello:runon		ALLHOSTS
 goodbye:runwhen		cron-15m
@@ -51,6 +52,8 @@ locales:runwhen		boot,install,cron-15m
 locales:runon		ALLHOSTS
 alternatives:runwhen	install,cron-60m
 alternatives:runon	ALLHOSTS
+video:runwhen		boot,install,cron-60m
+video:runon		ALLHOSTS
 
 # ones to run only on DOCHOSTS
 useraccounts:runwhen	boot,install,cron-15m
