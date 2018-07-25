@@ -9,9 +9,11 @@ dir	    /var/log/exim4
 owner       1313
 group       1313
 
-file	    /var/log/exim4/mainlog
-owner       1313
-group       1313
+foreach	    /var/log/exim4/*
+  file
+  owner     1313
+  group     1313
+end
 
 dir	    /var/spool/exim4
 owner       1313
