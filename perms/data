@@ -1,0 +1,23 @@
+# permissions maint script data file
+
+dir         /tmp/.ICE-unix
+perms       01777
+owner	    0
+group       0
+
+dir	    /var/log/exim4
+owner       1313
+group       1313
+
+file	    /var/log/exim4/mainlog
+owner       1313
+group       1313
+
+dir	    /var/spool/exim4
+owner       1313
+group       1313
+
+ifdir /var/log/condor
+  owner 450
+  group 100
+end

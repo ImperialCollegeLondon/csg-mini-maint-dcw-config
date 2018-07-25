@@ -71,3 +71,6 @@ killLRP:msg		killLRP/msg
 killLRP:domain		imperial.ac.uk
 killLRP:prohibited	MATLAB,java,dropbox,qemu,sicstus,javac,yap,ruby
 killLRP:duration	60
+perms:runwhen		boot,install,cron-30m
+perms:runon		DOCHOSTS
+#perms:data		perms/data
