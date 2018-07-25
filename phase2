@@ -65,5 +65,6 @@ kerberos:runon		DOCHOSTS
 killLRP:runwhen		cron-60m
 killLRP:runon		SHELLSERVER
 killLRP:msg		killLRP/msg
+killLRP:domain		imperial.ac.uk
 killLRP:prohibited	MATLAB,java,dropbox,qemu,sicstus,javac,yap,ruby
 killLRP:duration	60
