@@ -55,10 +55,15 @@ alternatives:runon	ALLHOSTS
 video:runwhen		boot,install,cron-60m
 video:runon		ALLHOSTS
 
-# ones to run only on DOCHOSTS
+# ones to run only on DOCHOSTS, or subsets of those
 useraccounts:runwhen	boot,install,cron-15m
 useraccounts:runon	DOCHOSTS
 autovol:runwhen		boot,install,cron-15m
 autovol:runon		DOCHOSTS
 kerberos:runwhen	boot,install,cron-15m
 kerberos:runon		DOCHOSTS
+killLRP:runwhen		cron-60m
+killLRP:runon		SHELLSERVER
+killLRP:msg		killlongrunning/msg
+killLRP:prohibited	MATLAB,java,dropbox,qemu,sicstus,javac,yap,ruby
+killLRP:duration	60
