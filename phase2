@@ -54,6 +54,9 @@ alternatives:runwhen	install,cron-60m
 alternatives:runon	ALLHOSTS
 video:runwhen		boot,install,cron-60m
 video:runon		ALLHOSTS
+hosts:runwhen		boot,install,cron-60m
+hosts:runon		ALLHOSTS
+hosts:vitalhosts	tokaimura,thoth,shikra,besra,co331,co220
 
 # ones to run only on DOCHOSTS, or subsets of those
 useraccounts:runwhen	boot,install,cron-15m
