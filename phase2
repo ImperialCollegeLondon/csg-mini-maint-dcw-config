@@ -57,6 +57,8 @@ video:runon		ALLHOSTS
 hosts:runwhen		boot,install,cron-60m
 hosts:runon		ALLHOSTS
 hosts:vitalhosts	tokaimura,thoth,shikra,besra,co331,co220
+javaalternatives:runwhen boot,install,cron-60m
+javaalternatives:runon	ALLHOSTS
 
 # ones to run only on DOCHOSTS, or subsets of those
 useraccounts:runwhen	boot,install,cron-15m
@@ -73,4 +75,4 @@ killLRP:prohibited	MATLAB,java,dropbox,qemu,sicstus,javac,yap,ruby
 killLRP:duration	60
 perms:runwhen		boot,install,cron-30m
 perms:runon		DOCHOSTS
-#perms:data		perms/data
+#nb also look in	perms/data
