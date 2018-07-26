@@ -76,3 +76,6 @@ killLRP:duration	60
 perms:runwhen		boot,install,cron-30m
 perms:runon		DOCHOSTS
 #nb also look in	perms/data
+upstart:runwhen		boot,install,cron-15m
+upstart:runon		DOCHOSTS
+upstart:disable		ureadahead,ureadahead-other,apport,plymouth-stop
