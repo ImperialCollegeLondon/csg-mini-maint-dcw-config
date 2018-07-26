@@ -59,6 +59,8 @@ hosts:runon		ALLHOSTS
 hosts:vitalhosts	tokaimura,thoth,shikra,besra,co331,co220
 javaalternatives:runwhen boot,install,cron-60m
 javaalternatives:runon	ALLHOSTS
+gconf:runwhen		boot,install,cron-15m
+gconf:runon		ALLHOSTS
 
 # ones to run only on DOCHOSTS, or subsets of those
 useraccounts:runwhen	boot,install,cron-15m
@@ -79,3 +81,4 @@ perms:runon		DOCHOSTS
 upstart:runwhen		boot,install,cron-15m
 upstart:runon		DOCHOSTS
 upstart:disable		ureadahead,ureadahead-other,apport,plymouth-stop
+
